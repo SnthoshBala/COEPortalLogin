@@ -8,7 +8,7 @@ namespace COE_Portal_API.Service
 {
     public interface ICustomerService<Customer>
     {
-        public object LoginCustomer(Customer c);
+        public object LoginCustomer(string tempPhone, string tempPass);
         public List<Customer> GetAllCustomer();
     }
 }

@@ -14,16 +14,16 @@ namespace COE_Portal_API.Repository
             return cc.Customers.ToList();
         }
 
-        public object LoginCustomer(Customer c)
+        public object LoginCustomer(string tempPhone, string tempPass)
         {
             try
             {
                 List<Customer> lc = cc.Customers.ToList();
                 if (lc.Count != 0)
                 {
-                    if (lc.Any(u => (u.Email == c.Email || u.PhoneNumber == c.PhoneNumber) && u.Password == c.Password))
+                    if (lc.Any(u => ( u.PhoneNumber == tempPhone) && u.Password == tempPass))
                     {
-                        return lc.Where(u => (u.Email == c.Email || u.PhoneNumber == c.PhoneNumber) && u.Password == c.Password).First();
+                        return lc.Where(u => ( u.PhoneNumber == tempPhone) && u.Password == tempPass).First();
                     }
                     else
                     {

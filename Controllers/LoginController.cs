@@ -25,9 +25,9 @@ namespace COE_Portal_API.Controllers
             return Ok(cs.GetAllCustomer());
         }
         [HttpPost]
-        public IActionResult Login(Customer c)
+        public IActionResult Login(string tempPhone, string tempPass)
         {
-            return Ok(cs.LoginCustomer(c));
+            return Ok(cs.LoginCustomer( tempPhone,  tempPass));
         }
     }
 }

@@ -19,9 +19,9 @@ namespace COE_Portal_API.Service
             return cr.GetAllCustomer();
         }
 
-        public object LoginCustomer(Customer c)
+        public object LoginCustomer(string tempPhone, string tempPass)
         {
-            return cr.LoginCustomer(c);
+            return cr.LoginCustomer( tempPhone, tempPass);
         }
     }
 }
